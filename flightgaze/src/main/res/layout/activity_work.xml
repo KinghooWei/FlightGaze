@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".WorkActivity">
+
+    <com.madgaze.smartglass.view.SplitCameraView
+        android:id="@+id/camera_view"
+        android:layout_width="320dp"
+        android:layout_height="180dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="320dp"
+        android:layout_height="180dp"
+        android:background="@color/white"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <Button
+        android:id="@+id/btn_on_off"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text="开启"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_picture"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="拍照"
+        app:layout_constraintEnd_toEndOf="@+id/btn_on_off"
+        app:layout_constraintStart_toStartOf="@+id/btn_on_off"
+        app:layout_constraintTop_toBottomOf="@+id/btn_on_off" />
+
+    <Button
+        android:id="@+id/btn_vedio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="录像"
+        app:layout_constraintEnd_toEndOf="@+id/btn_picture"
+        app:layout_constraintStart_toStartOf="@+id/btn_picture"
+        app:layout_constraintTop_toBottomOf="@+id/btn_picture" />
+
+    <ImageView
+        android:id="@+id/iv_face"
+        android:layout_width="200dp"
+        android:layout_height="220dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:textColor="@color/black"
+        android:textSize="48sp"
+        app:layout_constraintBottom_toTopOf="@+id/tv_identify_id"
+        app:layout_constraintStart_toEndOf="@+id/iv_face"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="魏金湖" />
+
+    <TextView
+        android:id="@+id/tv_mask"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:text="口罩"
+        android:textSize="36sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_name"
+        app:layout_constraintStart_toEndOf="@+id/tv_name"
+        app:layout_constraintTop_toTopOf="@+id/tv_name" />
+
+    <TextView
+        android:id="@+id/tv_identify_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:textColor="@color/black"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toTopOf="@+id/tv_from"
+        app:layout_constraintStart_toEndOf="@+id/iv_face"
+        app:layout_constraintTop_toBottomOf="@+id/tv_name"
+        tools:text="身份识别号：13631349741" />
+
+    <TextView
+        android:id="@+id/tv_class"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:textColor="@color/black"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toTopOf="@+id/tv_gate"
+        app:layout_constraintStart_toEndOf="@+id/iv_face"
+        app:layout_constraintTop_toBottomOf="@+id/tv_from"
+        tools:text="舱位：X" />
+
+    <TextView
+        android:id="@+id/tv_seat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:textColor="@color/black"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_class"
+        app:layout_constraintStart_toEndOf="@+id/tv_class"
+        app:layout_constraintTop_toTopOf="@+id/tv_class"
+        tools:text="座位：36C" />
+
+    <TextView
+        android:id="@+id/tv_gate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:textColor="@color/black"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/iv_face"
+        app:layout_constraintTop_toBottomOf="@+id/tv_class"
+        tools:text="登机口：2" />
+
+    <TextView
+        android:id="@+id/tv_from"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:textColor="@color/black"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toTopOf="@+id/tv_class"
+        app:layout_constraintStart_toEndOf="@+id/iv_face"
+        app:layout_constraintTop_toBottomOf="@+id/tv_identify_id"
+        tools:text="从 北京" />
+
+    <TextView
+        android:id="@+id/tv_to"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:textColor="@color/black"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_from"
+        app:layout_constraintStart_toEndOf="@+id/tv_from"
+        app:layout_constraintTop_toTopOf="@+id/tv_from"
+        tools:text="到 成都" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

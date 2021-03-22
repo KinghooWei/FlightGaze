@@ -1,0 +1,8 @@
+include ':uvccamerasdk'
+include ':flightglasses'
+include ':blacklist'
+include ':usbserial'
+include ':X5S-devkit-release'
+include ':libuvccamera'
+include ':flightgaze'
+rootProject.name = "FlightGaze"
